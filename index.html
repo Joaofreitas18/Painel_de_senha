@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Painel de Senhas</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+
+  <header id="topbar" class="topbar hidden">
+    <div class="brand">
+      <div class="brand__title">Painel de Senhas</div>
+      <div id="whoami" class="brand__sub">—</div>
+    </div>
+
+    <nav class="nav">
+      <button class="navbtn" data-go="tv" type="button">TV</button>
+      <button class="navbtn" data-go="user" type="button">Usuário</button>
+      <button class="navbtn" data-go="admin" type="button">Atendimento / Admin</button>
+      <button id="btnLogout" class="navbtn ghost" type="button">Sair</button>
+    </nav>
+  </header>
+
+  <main class="wrap">
+
+    <!-- LOGIN -->
+    <section id="screen-login" class="screen">
+      <div class="card center">
+        <h1>Acesso</h1>
+
+        <div class="field">
+          <label>Usuário</label>
+          <input id="loginUsername" autocomplete="username" placeholder="ex: admin"/>
+        </div>
+
+        <div class="field">
+          <label>Senha</label>
+          <input id="loginPassword" type="password" autocomplete="current-password" placeholder="••••••••"/>
+        </div>
+
+        <button id="btnLogin" class="btn" type="button">Entrar</button>
+
+        <div class="row" style="margin-top:10px; width:100%">
+          <button id="btnGoRegister" class="btn ghost" type="button">Cadastrar</button>
+          <button id="btnGoTVQuick" class="btn ghost" type="button">Abrir TV</button>
+        </div>
+
+        <div id="loginMsg" class="msg hidden"></div>
+
+        <div class="help">
+          <div><strong>Usuários padrão</strong></div>
+          <div class="help__grid">
+            <div class="badge">admin / admin123</div>
+            <div class="badge">atendente / 1234</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ESCOLHER GUICHÊ (Atendente) -->
+    <section id="screen-desk" class="screen hidden">
+      <div class="card center">
+        <h1>Escolher guichê</h1>
+
+        <div class="field">
+          <label>Guichê</label>
+          <select id="deskSelect"></select>
+        </div>
+
+        <button id="btnDeskConfirm" class="btn" type="button">Confirmar</button>
+        <button id="btnDeskLogout" class="btn ghost" type="button">Sair</button>
+
+        <div id="deskMsg" class="msg hidden"></div>
+      </div>
+    </section>
+
+    <!-- CADASTRO -->
+    <section id="screen-register" class="screen hidden">
+      <div class="card center">
+        <h1>Cadastro</h1>
+
+        <div class="field">
+          <label>Nome</label>
+          <input id="regName" placeholder="Seu nome"/>
+        </div>
+
+        <div class="field">
+          <label>Usuário</label>
+          <input id="regUsername" autocomplete="username" placeholder="ex: joao.silva"/>
+        </div>
+
+        <div class="field">
+          <label>Senha</label>
+          <input id="regPassword" type="password" autocomplete="new-password" placeholder="••••••••"/>
+        </div>
+
+        <button id="btnRegister" class="btn" type="button">Criar conta</button>
+        <button id="btnBackLogin" class="btn ghost" type="button">Voltar</button>
+
+        <div id="regMsg" class="msg hidden"></div>
+      </div>
+    </section>
+
+    <!-- TV -->
+    <section id="screen-tv" class="screen hidden"></section>
+
+    <!-- USUÁRIO (RETIRAR SENHA) -->
+    <section id="screen-user" class="screen hidden"></section>
+
+    <!-- ADMIN (ATENDIMENTO / GUICHÊS / AUDITORIA) -->
+    <section id="screen-admin" class="screen hidden"></section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <span class="badge">STJ • Demo Local (localStorage)</span>
+      <button id="btnResetLocal" class="navbtn ghost" type="button">Resetar dados (local)</button>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
